@@ -29,6 +29,28 @@ public abstract class ListaDupla {
         }
         
         } }
+        Celula pegaCelulaAnterior(int pos){
+            if(!this.PosicaoOcupada(pos)){
+            throw new IllegalArgumentException("Posicao nao existe");
+        }else{
+            if(pos == 0){
+                this.Atual = this.Ultima;
+            }else{
+                Celula auxiliar = this.Atual;
+                if(Atual.getAnterior() != null){
+                    auxiliar = auxiliar.getAnterior();
+                    this.Atual = auxiliar;
+                // }else{
+                //     Atual = PegaCelula(pos);
+                }            
+            }
+            if(Atual != null){
+                return (Atual);
+            }else{
+                throw new IllegalArgumentException("Celula nao existe na posição " + pos);	
+            }
+            
+            } }
 
     Celula PegaCelula(int pos){
         if(!this.PosicaoOcupada(pos)){

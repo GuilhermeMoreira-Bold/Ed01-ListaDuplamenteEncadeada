@@ -6,6 +6,7 @@ public class App {
         Random r = new Random();
         ListaDuplamenteEncadeada lista = new ListaDuplamenteEncadeada();
         ListaDuplamenteEncadeada listaSequencia = new ListaDuplamenteEncadeada();
+        ListaDuplamenteEncadeada listaSequencia2 = new ListaDuplamenteEncadeada();
         int[] sequencia = {1,15,16,25,32,36};
         KMPAlgoritmo kmp = new KMPAlgoritmo();
 
@@ -29,10 +30,17 @@ public class App {
         lista.Adiciona(25);
         lista.Adiciona(32);
         lista.Adiciona(36);
+
+        listaSequencia2.Adiciona(1);
+        listaSequencia2.Adiciona(15);
+        listaSequencia2.Adiciona(16);
+        listaSequencia2.Adiciona(25);
+        listaSequencia2.Adiciona(32);
+        listaSequencia2.Adiciona(36);
  
  
         System.out.println(kmp.countSequenceOccurrences(lista, listaSequencia));
-        
+        System.out.println(kmp.countSequenceOccurrencesInverso(lista, listaSequencia2));
         
         // System.out.println(lista.Imprimir());
     }
